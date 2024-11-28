@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <x-header name="Shady" :fruits="$fruits"/>
+    <h1>{{$info}}</h1>
+        <h3>Name: {{$emp["Name"]}}</h3>
+        <h3>Email: {{$emp["Email"]}}</h3>
+        <h3>Phone: {{$emp["Phone"]}}</h3>
 </body>
 </html>

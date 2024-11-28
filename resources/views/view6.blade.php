@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <x-header name="Shady" :fruits="$fruits"/>
+    <h1>Welcome to, {{$CompanyName}}</h1>
 </body>
 </html>

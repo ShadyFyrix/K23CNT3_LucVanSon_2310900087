@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <x-header name="Shady" :fruits="$fruits"/>
+    <h1>Passing Data to View4</h1>
+<h2>Name:{{$name}}</h2>
+<h2>Company:{{$company}}</h2>
 </body>
 </html>

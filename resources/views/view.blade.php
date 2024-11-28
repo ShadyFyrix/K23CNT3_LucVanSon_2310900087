@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <x-header name="Shady" :fruits="$fruits"/>
+    <h1>Welcome to my View :D</h1>
+    <hr>
+    <h2>Code by:{{$name}}</h2>
 </body>
 </html>
