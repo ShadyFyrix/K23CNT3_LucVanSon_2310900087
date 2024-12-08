@@ -4,8 +4,12 @@ use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewdemoController;
 use App\Http\Controllers\ProductController;
-
+use Illuminate\Http\Request;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ReservationController;
 //chap 1 - Router
+
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -70,3 +74,25 @@ Route::get('/home1',function(){
     Route::get('/contact',function(){
     return view('contact');
     });
+//chap5 
+/*route::get('/user', function(Request $request){
+    Return $request->  path();
+});
+*/
+route::get('/user', function(Request $request){
+    Return $request->fullUrl();
+});
+Route::get('/login',[LoginController::class,'index'])->name('login.index');
+
+Route::post('/login',[LoginController::class,'loginSubmit'])->name('login.submit');
+
+Route::get('/registration', [RegistrationController::class, 'showForm'])->name('registration.form');
+
+Route::post('/registration', [RegistrationController::class, 'submitForm'])->name('registration.submit');
+
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation.form');
+
+Route::post('/reservation', [ReservationController::class, 'submit'])->name('reservation.submit');
+
+
+
