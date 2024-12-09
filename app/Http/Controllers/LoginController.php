@@ -22,7 +22,10 @@ class LoginController extends Controller
             $fullName=$request->input('fullName');
             $email=$request->input('email');
             $password=$request->input('password');
-           return "Full Name:". $fullName . "Email:" . $email . "Password:".$password;
+            $request->session()->put('name',$email);
+           /*return "Full Name:". $fullName . "Email:" . $email . "Password:".$password;*/
+           return redirect();
+
         }
     }
 }

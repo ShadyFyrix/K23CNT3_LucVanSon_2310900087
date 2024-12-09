@@ -17,7 +17,7 @@
             <h1>Login</h1>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{route('login.submit')}}">
+        <form method="POST" action="{{route('session.submit')}}"">
 @csrf
     <div class="form-group">
     <label for="fullName">FullName:</label>
@@ -39,7 +39,12 @@
         <span class="text-danger">{{$message}}</span>
     @enderror
 </div>
-<button type="submit" class="btn btn-primary mt-3">Submit</button>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        @if(Session::has('error'))
+    <div class="alert alert-danger">
+        {{Session::get('error')}}
+    </div>
+        @endif
 </form>
     </div>
         </div>

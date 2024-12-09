@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SessionLoginController;
 //chap 1 - Router
 
 /*
@@ -82,10 +84,11 @@ Route::get('/home1',function(){
 route::get('/user', function(Request $request){
     Return $request->fullUrl();
 });
+/*
 Route::get('/login',[LoginController::class,'index'])->name('login.index');
 
 Route::post('/login',[LoginController::class,'loginSubmit'])->name('login.submit');
-
+*/
 Route::get('/registration', [RegistrationController::class, 'showForm'])->name('registration.form');
 
 Route::post('/registration', [RegistrationController::class, 'submitForm'])->name('registration.submit');
@@ -93,6 +96,13 @@ Route::post('/registration', [RegistrationController::class, 'submitForm'])->nam
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation.form');
 
 Route::post('/reservation', [ReservationController::class, 'submit'])->name('reservation.submit');
+//lab 6 _ session 
+Route::get('/session/get', [SessionController::class,'getSessionData'])->name('session.get');
+Route::get('/session/set', [SessionController::class,'storeSessionData'])->name('session.set');
+Route::get('/session/delete', [SessionController::class,'deleteSessionData'])->name('session.delete');
 
+Route::get('/login',[SessionLoginController::class,'login'])->name('session.login');
+Route::get('/logout',[SessionLoginController::class,'logout'])->name('session.logout');
+Route::post('/login',[SessionLoginController::class,'loginSubmit'])->name('session.submit');
 
 
