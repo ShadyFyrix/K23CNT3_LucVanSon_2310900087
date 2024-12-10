@@ -10,6 +10,9 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SessionLoginController;
+use App\Http\Controllers\KhoaController;
+use GuzzleHttp\Promise\Create;
+
 //chap 1 - Router
 
 /*
@@ -104,5 +107,28 @@ Route::get('/session/delete', [SessionController::class,'deleteSessionData'])->n
 Route::get('/login',[SessionLoginController::class,'login'])->name('session.login');
 Route::get('/logout',[SessionLoginController::class,'logout'])->name('session.logout');
 Route::post('/login',[SessionLoginController::class,'loginSubmit'])->name('session.submit');
+//lab 7 database
+route::get('/khoa',[KhoaController::class,'index'])
+->name('khoa.index');
+
+route::get('/khoa/detail/{makh}',[KhoaController::class,'detail'])
+->name('khoa.detail');
+
+route::get('/khoa/create',[KhoaController::class,'create'])
+->name('khoa.create');
+
+route::post('/khoa/create',[KhoaController::class,'createSubmit'])
+->name('khoa.createSubmit');
+
+Route::get('/khoa/edit/{MaKH}', [KhoaController::class, 'edit'])
+->name('khoa.edit');
+
+Route::post('/khoa/update/{MaKH}', [KhoaController::class, 'update'])
+->name('khoa.update');
+
+Route::post('/khoa/delete/{MaKH}', [KhoaController::class, 'delete'])
+->name('khoa.delete');
+
+
 
 
