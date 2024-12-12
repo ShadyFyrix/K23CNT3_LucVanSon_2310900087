@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <section class="container border my-3">
@@ -24,7 +25,8 @@
         <table class="table table-bordered">
             <thead>
                 <tr class="text">
-                    <a href="/khoa/create" class="btn btn-success">Thêm Mới</a>
+                    <a href="/khoa/insert" class="btn btn-warning  btn-lg fw-bold" >Thêm <i class="fa-regular fa-square-caret-down"></i></a>
+                    <a href="/monhoc" class="btn btn-warning  btn-lg fw-bold" ><i class="fa-solid fa-right-left"></i></a>
                 </tr>
                 <tr>
                     <th>#</th>

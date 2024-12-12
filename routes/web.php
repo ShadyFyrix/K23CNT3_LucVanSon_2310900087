@@ -11,7 +11,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SessionLoginController;
 use App\Http\Controllers\KhoaController;
-use GuzzleHttp\Promise\Create;
+use App\Http\Controllers\MonHocController;
 
 //chap 1 - Router
 
@@ -128,6 +128,30 @@ Route::post('/khoa/update/{MaKH}', [KhoaController::class, 'update'])
 
 Route::post('/khoa/delete/{MaKH}', [KhoaController::class, 'delete'])
 ->name('khoa.delete');
+//lab 8 Query builder 
+#lab8
+# Môn Học
+Route::get('/monhoc',[MonHocController::class,'getMonHocs'])
+->name('monhoc.list');
+#chi tiet
+Route::get('/monhoc/detail/{mamh}',[MonHocController::class,'getmonhoc'])
+->name('monhoc.detail');
+# sửa
+Route::get('/monhoc/edit/{mamh}',[MonHocController::class,'edit'])
+->name('monhoc.edit');
+#sửa->submit
+Route::post('/monhoc/edit',[MonHocController::class,'editSubmit'])
+->name('monhoc.editsubmit');
+#delete
+Route::delete('/monhoc/delete/{mamh}', [MonHocController::class, 'delete'])
+->name('monhoc.delete');
+#insert
+Route::get('/monhoc/insert',[MonHocController::class,'insert'])
+->name('monhoc.insert');
+#insertSubmit
+Route::post('/monhoc/insert',[MonHocController::class,'insertSubmit'])
+->name('monhoc.insertsubmit');
+
 
 
 
