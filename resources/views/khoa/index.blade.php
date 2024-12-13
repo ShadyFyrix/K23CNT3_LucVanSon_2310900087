@@ -11,6 +11,9 @@
 <body>
     <section class="container border my-3">
         <h1>Danh sách Khoa</h1>
+        <a href="/khoa/insert" class="btn btn-warning  btn-lg fw-bold">Thêm <i class="fa-regular fa-square-caret-down"></i></a>
+        <a href="/monhoc" class="btn btn-warning  btn-lg fw-bold">Môn Học <i class="fa-solid fa-right-left"></i></a>
+        <a href="/sinhvien" class="btn btn-warning  btn-lg fw-bold">Sinh Viên <i class="fa-solid fa-right-left"></i></a>
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -24,10 +27,6 @@
         @endif
         <table class="table table-bordered">
             <thead>
-                <tr class="text">
-                    <a href="/khoa/insert" class="btn btn-warning  btn-lg fw-bold" >Thêm <i class="fa-regular fa-square-caret-down"></i></a>
-                    <a href="/monhoc" class="btn btn-warning  btn-lg fw-bold" ><i class="fa-solid fa-right-left"></i></a>
-                </tr>
                 <tr>
                     <th>#</th>
                     <th>Mã Khoa</th>

@@ -23,8 +23,8 @@
             </div>
         @endif
         <a href="/monhoc/insert" class="btn btn-warning btn-lg fw-bold">Thêm <i class="fa-regular fa-square-caret-down"></i></a>
-        <a href="/khoa" class="btn btn-warning btn-lg fw-bold"><i class="fa-solid fa-right-left"></i></a>
-
+        <a href="/khoa" class="btn btn-warning btn-lg fw-bold">Khoa <i class="fa-solid fa-right-left"></i></a>
+        <a href="/sinhvien" class="btn btn-warning btn-lg fw-bold">Sinh Viên <i class="fa-solid fa-right-left"></i></a>
         <table class="table table-bordered">
             <thead>
                 <tr>

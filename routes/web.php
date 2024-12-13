@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\SinhVienController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewdemoController;
 use App\Http\Controllers\ProductController;
@@ -151,6 +152,27 @@ Route::get('/monhoc/insert',[MonHocController::class,'insert'])
 #insertSubmit
 Route::post('/monhoc/insert',[MonHocController::class,'insertSubmit'])
 ->name('monhoc.insertsubmit');
+//lab 9 model 
+Route::get('/sinhvien', [SinhVienController::class, 'index'])
+->name('sinhvien.index');
+
+Route::get('/sinhvien/create', [SinhVienController::class, 'create'])
+->name('sinhvien.create');
+
+Route::post('/sinhvien', [SinhVienController::class, 'store'])
+->name('sinhvien.store');
+
+Route::get('/sinhvien/{maSV}/edit', [SinhVienController::class, 'edit'])
+->name('sinhvien.edit');
+
+Route::put('/sinhvien/{maSV}', [SinhVienController::class, 'update'])
+->name('sinhvien.update');
+
+Route::delete('/sinhvien/{maSV}', [SinhVienController::class, 'delete'])
+->name('sinhvien.delete');
+
+Route::get('/sinhvien/{maSV}', [SinhVienController::class, 'detail'])
+->name('sinhvien.detail');
 
 
 
